@@ -1,0 +1,10 @@
+﻿<option value=""> Select Supervisor</option>
+
+@if (ViewBag.SupervisorOptions != null)
+{
+    foreach (var item in ViewBag.SupervisorOptions)
+    {
+        <option value="@item.Value"> @item.Text</option>
+    }
+}
+

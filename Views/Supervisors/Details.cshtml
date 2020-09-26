@@ -1,0 +1,58 @@
+﻿@model LastProject.Models.Supervisor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supervisor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorJob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorJob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubervisorMob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubervisorMob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.University.UniversityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University.UniversityName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupervisorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿@model LastProject.Models.Student
+@{
+    Layout = null;
+}
+
+
+
+@using (Html.BeginForm("AddOrEdit", "Students", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+{
+    @Html.HiddenFor(model => model.StudentID)
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentName, new { @class = "control-label" })
+        @Html.EditorFor(model => model.StudentName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.StudentName)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Department, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Department)
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Major, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control" } })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.StartDate, new { @class = "control-label" })
+        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.UniversityID, "University & Supervisor", new { @class = "control-label" })
+        @if (ViewBag.UniversityList != null)
+        {
+            @Html.DropDownListFor(model => model.UniversityID, ViewBag.UniversityList as SelectList, "Select University", new { @class = "custom-select " })
+        }
+        @Html.DropDownListFor(model => model.SupervisorID, new SelectList(""), "Select>>>Supervisor", new { @class = "custom-select " })
+
+
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="reset" value="Reset" class="btn btn-warning" />
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#UniversityID").change(function () {
+                $.get("/Students/GetSupervisorList", { UniversityID: $("#UniversityID").val() }, function (data) {
+                    $("#SupervisorID").empty();
+                    $.each(data, function (AddOrEdit, row) {
+                        $("#SupervisorID").append("<option value='" + row.SupervisorID + "'>" + row.SupervisorName + "</option>")
+                    });
+                });
+            })
+        });
+    </script>
+
+}

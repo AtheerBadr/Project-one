@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LastProject.Models.Supervisor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SupervisorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupervisorEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupervisorJob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubervisorMob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.University.UniversityName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupervisorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupervisorEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupervisorJob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubervisorMob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.University.UniversityName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupervisorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SupervisorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupervisorID })
+        </td>
+    </tr>
+}
+
+</table>
