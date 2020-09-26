@@ -1,0 +1,70 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Livvic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+body {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    min-height:700px!important;
+   
+}
+footer{
+    
+    bottom:0;
+    width:100%;
+}
+
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.fred {
+    background-color: aquamarine !important;
+    color: black !important;
+    border-color: darkblue !important;
+    border-radius: .5em !important;
+}
+.container-fluid{
+    padding:0px!important;
+}
+header {
+    background: linear-gradient( to bottom, rgb(57, 57, 57),#fff) !important;
+}
+
+header .row .col-md-5 {
+    padding: 4.2vmin 1vmin!important;
+}
+
+header .row .col-md-7 {
+    padding: 22vmin 1vmax!important;
+    padding-bottom: 35vmin!important;
+    color:white!important;
+}
+header .row .col-md-7 h5{
+    font-family: Abel;
+}
+header .row .col-md-7 h1 {
+    font-family: Livvic;
+}
+    header .row .col-md-7 p {
+        font-family: Abel;
+    }
+    header .row .col-md-5 img {
+        padding-top: 100px !important;
+        width: 200px !important;
+    }
+
+.card {
+    margin: 0 auto !important; /* Added */
+    float: none !important; /* Added */
+    margin-bottom: 10px!important; /* Added */
+    border:0px!important;
+}
+.card-img-top {
+    height: 250px !important;
+}
